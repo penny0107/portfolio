@@ -143,11 +143,11 @@
       }
 
       .header-grid {
-        margin-top: -42px;
+        margin-top: 0;
         display: grid;
         grid-template-columns: 168px minmax(0, 1fr) 220px;
         gap: 20px;
-        align-items: center;
+        align-items: start;
       }
 
       .avatar {
@@ -167,6 +167,7 @@
         padding: 18px;
         isolation: isolate;
         align-self: center;
+        margin-top: -42px;
       }
 
       .avatar img {
@@ -180,7 +181,7 @@
       }
 
       .identity {
-        padding-top: 18px;
+        padding-top: 16px;
       }
 
       .identity h1 {
@@ -218,7 +219,7 @@
       }
 
       .actions {
-        padding-top: 18px;
+        padding-top: 16px;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -480,8 +481,12 @@
         }
 
         .header-grid {
-          margin-top: -32px;
+          margin-top: 0;
           align-items: start;
+        }
+
+        .avatar {
+          margin-top: -28px;
         }
 
         .actions {
@@ -725,54 +730,6 @@
           </div>
         </section>
 
-        <section class="card">
-          <div class="section">
-            <h2>Skills</h2>
-            <div class="skills">
-              <span class="skill">合作領導</span>
-              <span class="skill">樂群敬業</span>
-              <span class="skill">溝通力</span>
-              <span class="skill">解決問題</span>
-              <span class="skill">同理心</span>
-              <span class="skill">主動積極</span>
-              <span class="skill">規劃整合</span>
-              <span class="skill">探究冒險</span>
-              <span class="skill">觀察力</span>
-              <span class="skill">英文表達</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="card">
-          <div class="section">
-            <h2>Insights</h2>
-            <div class="insight">
-              <div class="stat">
-                <strong>服務導向</strong>
-                <p>從志工現場把助人經驗轉成面對醫療工作所需的細膩度與責任感。</p>
-              </div>
-              <div class="stat">
-                <strong>學術探索</strong>
-                <p>由動物興趣出發，延伸到動物行為、仿生科技與臨床觀摩。</p>
-              </div>
-              <div class="stat">
-                <strong>未來方向</strong>
-                <p>希望進入獸醫專業，投入動物醫療、生命教育與照護實務。</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="card">
-          <div class="section">
-            <h2>Personal Statement</h2>
-            <p class="quote">
-              <strong>It’s kind of fun to do the impossible.</strong>
-              高中三年的整理，讓車銀優更確認自己想把對動物的熱愛、對人的關懷，
-              與面對挑戰時不退縮的行動力，帶進未來的獸醫學習與實踐。
-            </p>
-          </div>
-        </section>
       </div>
 
       <aside class="side-column">
@@ -786,6 +743,49 @@
             <a class="side-link" href="#">動物實習札記：動物相關所實習</a>
             <a class="side-link" href="#">醫路探索啟程：營隊學習歷程</a>
           </div>
+        </section>
+
+        <section class="card sidebar-card">
+          <h3>Skills</h3>
+          <div class="skills">
+            <span class="skill">合作領導</span>
+            <span class="skill">樂群敬業</span>
+            <span class="skill">溝通力</span>
+            <span class="skill">解決問題</span>
+            <span class="skill">同理心</span>
+            <span class="skill">主動積極</span>
+            <span class="skill">規劃整合</span>
+            <span class="skill">探究冒險</span>
+            <span class="skill">觀察力</span>
+            <span class="skill">英文表達</span>
+          </div>
+        </section>
+
+        <section class="card sidebar-card">
+          <h3>Insights</h3>
+          <div class="insight">
+            <div class="stat">
+              <strong>服務導向</strong>
+              <p>從志工現場把助人經驗轉成面對醫療工作所需的細膩度與責任感。</p>
+            </div>
+            <div class="stat">
+              <strong>學術探索</strong>
+              <p>由動物興趣出發，延伸到動物行為、仿生科技與臨床觀摩。</p>
+            </div>
+            <div class="stat">
+              <strong>未來方向</strong>
+              <p>希望進入獸醫專業，投入動物醫療、生命教育與照護實務。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card sidebar-card">
+          <h3>Personal Statement</h3>
+          <p class="quote">
+            <strong>It’s kind of fun to do the impossible.</strong>
+            高中三年的整理，讓車銀優更確認自己想把對動物的熱愛、對人的關懷，
+            與面對挑戰時不退縮的行動力，帶進未來的獸醫學習與實踐。
+          </p>
         </section>
       </aside>
     </main>
