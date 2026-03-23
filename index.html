@@ -98,12 +98,14 @@
         display: grid;
         grid-template-columns: minmax(0, 1.75fr) minmax(280px, 0.8fr);
         gap: 24px;
+        align-items: start;
       }
 
       .main-column,
       .side-column {
         display: grid;
         gap: 16px;
+        align-content: start;
       }
 
       .card {
@@ -145,7 +147,7 @@
         display: grid;
         grid-template-columns: 168px minmax(0, 1fr) 220px;
         gap: 20px;
-        align-items: end;
+        align-items: center;
       }
 
       .avatar {
@@ -164,6 +166,7 @@
         line-height: 1.35;
         padding: 18px;
         isolation: isolate;
+        align-self: center;
       }
 
       .avatar img {
@@ -177,7 +180,7 @@
       }
 
       .identity {
-        padding-top: 86px;
+        padding-top: 54px;
       }
 
       .identity h1 {
@@ -215,11 +218,12 @@
       }
 
       .actions {
-        padding-top: 86px;
+        padding-top: 54px;
         display: flex;
         flex-direction: column;
         gap: 10px;
         align-items: stretch;
+        justify-content: center;
       }
 
       .btn {
@@ -477,6 +481,7 @@
 
         .header-grid {
           margin-top: -64px;
+          align-items: start;
         }
 
         .actions {
