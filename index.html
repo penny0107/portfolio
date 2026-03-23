@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>車銀優 | LinkedIn 風格學習歷程檔案</title>
+    <style>
+      :root {
+        --bg: #f4f2ee;
+        --surface: #ffffff;
+        --surface-soft: #f9fafb;
+        --border: #d8dadd;
+        --text: #1d2226;
+        --muted: #5e6670;
+        --brand: #0a66c2;
+        --brand-deep: #004182;
+        --success: #057642;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+        color: var(--text);
+        background: var(--bg);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #e7e7e7;
+      }
+
+      .topbar-inner {
+        width: min(1128px, calc(100vw - 24px));
+        margin: 0 auto;
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand-area,
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .linkedin-logo {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: var(--brand);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        font-size: 1.05rem;
+      }
+
+      .search-pill {
+        min-width: 250px;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: #edf3f8;
+        color: #607284;
+        font-size: 0.93rem;
+      }
+
+      .nav-links span {
+        color: #687684;
+        font-size: 0.92rem;
+      }
+
+      .page {
+        width: min(1128px, calc(100vw - 24px));
+        margin: 24px auto 48px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.75fr) minmax(280px, 0.8fr);
+        gap: 24px;
+      }
+
+      .main-column,
+      .side-column {
+        display: grid;
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .profile-header {
+        overflow: visible;
+      }
+
+      .cover {
+        min-height: 200px;
+        background:
+          linear-gradient(120deg, rgba(10, 102, 194, 0.92), rgba(0, 65, 130, 0.82)),
+          radial-gradient(circle at 15% 30%, rgba(255, 255, 255, 0.18), transparent 18%),
+          linear-gradient(135deg, #3d7fbf, #0a66c2);
+        position: relative;
+      }
+
+      .cover::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(160deg, transparent 0 50%, rgba(255, 255, 255, 0.12) 50% 58%, transparent 58% 100%);
+        opacity: 0.7;
+      }
+
+      .profile-body {
+        padding: 0 24px 24px;
+      }
+
+      .header-grid {
+        margin-top: -78px;
+        display: grid;
+        grid-template-columns: 168px minmax(0, 1fr) 220px;
+        gap: 20px;
+        align-items: end;
+      }
+
+      .avatar {
+        width: 168px;
+        height: 168px;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        background: linear-gradient(180deg, #dbe9f6, #eef4f8);
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: var(--brand-deep);
+        font-weight: 800;
+        line-height: 1.35;
+        padding: 18px;
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .identity {
+        padding-top: 86px;
+      }
+
+      .identity h1 {
+        font-size: clamp(2rem, 4vw, 2.9rem);
+        letter-spacing: -0.03em;
+      }
+
+      .headline {
+        margin-top: 6px;
+        font-size: 1.06rem;
+        line-height: 1.55;
+        color: #343a40;
+      }
+
+      .location {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .contact-row {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        color: var(--brand);
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+
+      .contact-row .connections {
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .actions {
+        padding-top: 86px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding: 10px 16px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        border: 1px solid transparent;
+        text-align: center;
+      }
+
+      .btn.primary {
+        background: var(--brand);
+        color: #fff;
+      }
+
+      .btn.secondary {
+        background: #fff;
+        color: var(--brand);
+        border-color: var(--brand);
+      }
+
+      .btn.ghost {
+        background: #fff;
+        color: #5c6670;
+        border-color: #c9cfd6;
+      }
+
+      .info-strip {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 16px;
+      }
+
+      .mini-card {
+        background: var(--surface-soft);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+      }
+
+      .mini-card strong {
+        display: block;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+      }
+
+      .mini-card p,
+      .mini-card li {
+        color: #47525d;
+        line-height: 1.6;
+        font-size: 0.94rem;
+      }
+
+      .mini-card ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .section {
+        padding: 20px 24px 22px;
+      }
+
+      .section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 14px;
+      }
+
+      .about {
+        color: #3a4450;
+        line-height: 1.85;
+        font-size: 1rem;
+      }
+
+      .featured-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .feature-box {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+        background: linear-gradient(180deg, #fff, #fbfcfd);
+      }
+
+      .feature-box .kicker {
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+      }
+
+      .feature-box strong {
+        display: block;
+        font-size: 1.55rem;
+        color: var(--brand-deep);
+        margin-bottom: 8px;
+      }
+
+      .feature-box p {
+        color: #4a5561;
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+
+      .experience-item,
+      .education-item,
+      .activity-item {
+        display: grid;
+        grid-template-columns: 56px minmax(0, 1fr);
+        gap: 14px;
+      }
+
+      .experience-item + .experience-item,
+      .education-item + .education-item,
+      .activity-item + .activity-item {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid #eceef0;
+      }
+
+      .logo {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #fff;
+        background: linear-gradient(180deg, #0a66c2, #004182);
+      }
+
+      .logo.alt {
+        background: linear-gradient(180deg, #0b875b, #057642);
+      }
+
+      .logo.soft {
+        background: linear-gradient(180deg, #6f7f92, #4c5d70);
+      }
+
+      .item-title {
+        font-size: 1.02rem;
+        font-weight: 700;
+      }
+
+      .item-sub {
+        margin-top: 3px;
+        color: #47525d;
+        font-size: 0.95rem;
+      }
+
+      .item-time {
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .item-copy {
+        margin-top: 9px;
+        color: #3e4954;
+        line-height: 1.75;
+        font-size: 0.95rem;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill {
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: #eef3f8;
+        border: 1px solid #d7e4f0;
+        color: #23425d;
+        font-size: 0.93rem;
+        font-weight: 600;
+      }
+
+      .sidebar-card {
+        padding: 16px;
+      }
+
+      .sidebar-card h3 {
+        font-size: 1.02rem;
+        margin-bottom: 14px;
+      }
+
+      .side-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .side-link {
+        display: block;
+        padding: 12px 13px;
+        text-decoration: none;
+        border-radius: 10px;
+        background: var(--surface-soft);
+        border: 1px solid var(--border);
+        color: var(--brand-deep);
+        font-weight: 600;
+        line-height: 1.45;
+      }
+
+      .insight {
+        display: grid;
+        gap: 10px;
+      }
+
+      .insight .stat {
+        padding: 12px 0;
+        border-top: 1px solid #eceef0;
+      }
+
+      .insight .stat:first-child {
+        padding-top: 0;
+        border-top: 0;
+      }
+
+      .insight strong {
+        color: var(--brand-deep);
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .quote {
+        color: #39434e;
+        font-size: 0.98rem;
+        line-height: 1.8;
+      }
+
+      .quote strong {
+        color: var(--brand-deep);
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 980px) {
+        .page,
+        .info-strip,
+        .featured-grid,
+        .header-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .actions,
+        .identity {
+          padding-top: 0;
+        }
+
+        .header-grid {
+          margin-top: -64px;
+        }
+
+        .actions {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .topbar-inner {
+          width: min(100vw - 16px, 1128px);
+        }
+
+        .search-pill,
+        .nav-links {
+          display: none;
+        }
+
+        .page {
+          width: min(100vw - 16px, 1128px);
+          margin-top: 12px;
+          gap: 16px;
+        }
+
+        .section,
+        .sidebar-card,
+        .profile-body {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .avatar {
+          width: 132px;
+          height: 132px;
+        }
+
+        .header-grid {
+          margin-top: -56px;
+        }
+
+        .featured-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand-area">
+          <div class="linkedin-logo">in</div>
+          <div class="search-pill">搜尋車銀優的學習歷程、技能與成果</div>
+        </div>
+        <div class="nav-links">
+          <span>首頁</span>
+          <span>個人檔案</span>
+          <span>成長紀錄</span>
+          <span>學習成果</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="main-column">
+        <section class="card profile-header">
+          <div class="cover"></div>
+          <div class="profile-body">
+            <div class="header-grid">
+              <div class="avatar" id="profileAvatar">
+                <img
+                  src="./profile-photo.jpg"
+                  alt="車銀優形象照"
+                  onerror="this.remove(); document.getElementById('profileAvatar').textContent='車銀優 形象照';"
+                />
+              </div>
+
+              <div class="identity">
+                <h1>車銀優</h1>
+                <p class="headline">
+                  以國立臺灣大學獸醫學系為目標的自然科學生，長期投入醫療志工、動物照護探索與服務學習，
+                  並持續在英語表達、社團領導與自主研究中累積溝通力與行動力。
+                </p>
+                <p class="location">Taipei, Taiwan • 高中自然科學班 • 醫藥衛生 / 生物資源領域</p>
+                <div class="contact-row">
+                  <span>申請目標：國立臺灣大學獸醫學系</span>
+                  <span class="connections">150+ 小時服務學習 • 36+ 小時臨場觀摩</span>
+                </div>
+              </div>
+
+              <div class="actions">
+                <div class="btn primary">查看學習亮點</div>
+                <div class="btn secondary">聯絡資訊</div>
+                <div class="btn ghost">更多成果</div>
+              </div>
+            </div>
+
+            <div class="info-strip">
+              <div class="mini-card">
+                <strong>目前定位</strong>
+                <p>
+                  把對動物照護的熱情，轉化成可被驗證的服務紀錄、探索經驗與學習成果，
+                  持續向獸醫專業靠近。
+                </p>
+              </div>
+              <div class="mini-card">
+                <strong>核心關鍵字</strong>
+                <ul>
+                  <li>與人為善，奉獻所學</li>
+                  <li>精於外語，長於溝通</li>
+                  <li>求知若渴，積極進取</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section">
+            <h2>About</h2>
+            <p class="about">
+              整理高中三年的多元表現後，車銀優更確定自己希望結合對動物的喜愛、對人的關懷與持續前進的學習力，
+              朝獸醫領域深耕。從校內醫療志工到臺北市立動物園公共服務，從英語檢定到自主學習與實習探索，
+              每一段歷程都讓他更理解專業不只是知識，也包含同理、耐心、溝通與面對問題時的主動行動。
+            </p>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section">
+            <h2>Featured</h2>
+            <div class="featured-grid">
+              <div class="feature-box">
+                <div class="kicker">服務學習</div>
+                <strong>150+</strong>
+                <p>校內外醫療志工、課輔志工與公共服務累積時數，持續在現場練習同理與責任感。</p>
+              </div>
+              <div class="feature-box">
+                <div class="kicker">探索經驗</div>
+                <strong>36+</strong>
+                <p>參與動物醫院觀摩、營隊與場域實習，將興趣延伸成更具體的專業理解。</p>
+              </div>
+              <div class="feature-box">
+                <div class="kicker">語言與表達</div>
+                <strong>A / 金色</strong>
+                <p>英檢中高級初試、多益金色證書與英聽 A 級，支撐跨場域溝通與資料閱讀能力。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section">
+            <h2>Experience</h2>
+
+            <div class="experience-item">
+              <div class="logo">VS</div>
+              <div>
+                <div class="item-title">校內外志工與醫療服務參與</div>
+                <div class="item-sub">國中醫療志工、輔導室課輔志工、臺北市立動物園公共服務</div>
+                <div class="item-time">高中三年持續投入</div>
+                <p class="item-copy">
+                  從學習外傷處理、陪伴服務對象，到面對不同年齡層的溝通需求，
+                  在現場逐步理解愛心、同理心與耐心的重要，也讓自己更確定想把助人的能力帶入未來醫療專業。
+                </p>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="logo alt">EN</div>
+              <div>
+                <div class="item-title">英語精進與跨域溝通實踐</div>
+                <div class="item-sub">全民英檢中高級初試、多益金色證書、英聽 A 級</div>
+                <div class="item-time">持續累積的語言能力</div>
+                <p class="item-copy">
+                  透過語言檢定與日常精進建立英文基礎，也將外語能力轉化為服務情境中的表達與引導能力，
+                  讓自己能在公共服務、社團互動與資料閱讀上都更從容。
+                </p>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="logo soft">RD</div>
+              <div>
+                <div class="item-title">自主學習與獸醫領域探索</div>
+                <div class="item-sub">壁虎仿生科技小論文、動物行為學課程、醫路探索營與動物相關實習</div>
+                <div class="item-time">由興趣延伸成志向的過程</div>
+                <p class="item-copy">
+                  因飼養壁虎而展開對動物行為與環境保護的探究，從蒐集資料、閱讀英文教材到實際整理發表，
+                  再延伸到動物醫院觀摩與醫療營隊參與，逐步建立對獸醫工作樣貌的理解與認同。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+              <div class="logo">NT</div>
+              <div>
+                <div class="item-title">國立臺灣大學獸醫學系</div>
+                <div class="item-sub">申請目標學系</div>
+                <div class="item-time">以動物醫療、照護教育與生命關懷為長期方向</div>
+              </div>
+            </div>
+            <div class="education-item">
+              <div class="logo soft">HS</div>
+              <div>
+                <div class="item-title">高中自然科學班</div>
+                <div class="item-sub">醫藥衛生與生物資源導向學習歷程</div>
+                <div class="item-time">社團、志工、競賽、自主學習並行</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section">
+            <h2>Licenses & Achievements</h2>
+            <div class="activity-item">
+              <div class="logo alt">AW</div>
+              <div>
+                <div class="item-title">特殊優良表現與競賽成果</div>
+                <p class="item-copy">
+                  生物與林匹亞競賽、教育部小論文比賽甲等、英文話劇最佳舞台設計獎，
+                  並曾投稿兩篇文章至《青年日報》。
+                </p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="logo">CL</div>
+              <div>
+                <div class="item-title">社團與領導角色</div>
+                <p class="item-copy">
+                  參與校刊社與薇幼服務社，並曾擔任校刊社專題長、薇幼服務社活動長，
+                  在合作分工與帶領執行中累積組織能力。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+              <span class="skill">合作領導</span>
+              <span class="skill">樂群敬業</span>
+              <span class="skill">溝通力</span>
+              <span class="skill">解決問題</span>
+              <span class="skill">同理心</span>
+              <span class="skill">主動積極</span>
+              <span class="skill">規劃整合</span>
+              <span class="skill">探究冒險</span>
+              <span class="skill">觀察力</span>
+              <span class="skill">英文表達</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side-column">
+        <section class="card sidebar-card">
+          <h3>Profile Language</h3>
+          <div class="insight">
+            <div class="stat">
+              <strong>LinkedIn 風格摘要</strong>
+              <p>將學習歷程轉成接近真實個人檔案的資訊卡片與履歷式閱讀節奏。</p>
+            </div>
+            <div class="stat">
+              <strong>個人品牌關鍵字</strong>
+              <p>服務、溝通、探索、動物照護、獸醫志向。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card sidebar-card">
+          <h3>Learning Portfolio</h3>
+          <div class="side-list">
+            <a class="side-link" href="#">用行動傳遞愛：社團學習歷程</a>
+            <a class="side-link" href="#">以真心散播溫暖：志工服務學習歷程</a>
+            <a class="side-link" href="#">紙上榮夢場上實踐：特殊優良表現</a>
+            <a class="side-link" href="#">動物的奧祕：自主學習計畫歷程</a>
+            <a class="side-link" href="#">動物實習札記：動物相關所實習</a>
+            <a class="side-link" href="#">醫路探索啟程：營隊學習歷程</a>
+          </div>
+        </section>
+
+        <section class="card sidebar-card">
+          <h3>Insights</h3>
+          <div class="insight">
+            <div class="stat">
+              <strong>服務導向</strong>
+              <p>從志工現場把助人經驗轉成面對醫療工作所需的細膩度與責任感。</p>
+            </div>
+            <div class="stat">
+              <strong>學術探索</strong>
+              <p>由動物興趣出發，延伸到動物行為、仿生科技與臨床觀摩。</p>
+            </div>
+            <div class="stat">
+              <strong>未來方向</strong>
+              <p>希望進入獸醫專業，投入動物醫療、生命教育與照護實務。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card sidebar-card">
+          <h3>Personal Statement</h3>
+          <p class="quote">
+            <strong>It’s kind of fun to do the impossible.</strong>
+            高中三年的整理，讓車銀優更確認自己想把對動物的熱愛、對人的關懷，
+            與面對挑戰時不退縮的行動力，帶進未來的獸醫學習與實踐。
+          </p>
+        </section>
+      </aside>
+    </main>
+  </body>
+</html>
